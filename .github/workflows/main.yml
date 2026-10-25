@@ -23,9 +23,10 @@ jobs:
           gradle-version: 8.7
 
       - name: Build release APK
+        working-directory: tanix-launcher
         run: gradle assembleRelease --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
           name: MyHome-apk
-          path: app/build/outputs/apk/release/*.apk
+          path: tanix-launcher/app/build/outputs/apk/release/*.apk
